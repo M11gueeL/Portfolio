@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
-        <h1 className="text-xl font-bold hover:text-blue-500">Miguelangel Monasterio</h1>
+        <h1 className="sm:text-xl font-bold hover:text-blue-500">Miguelangel Monasterio</h1>
         <nav className="hidden md:flex space-x-4 font-bold">
         	<Link to="/" className="text-gray-700 hover:text-blue-500">Home</Link>
       		<Link to="/projects" className="text-gray-700 hover:text-blue-500">Proyectos</Link>
