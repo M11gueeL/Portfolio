@@ -31,7 +31,7 @@ export const skillsData = [
     },
     {
         name: "Express",
-        imageUrl: "https://lh5.googleusercontent.com/proxy/KTMTgxEwIkK5PtvXhl3qRBO_BB797q_ixPFFLP4lLCImNbufF5V6bRvVbBMHSuQ8rF4IiMBjIOW539IuELV-Ir5X7ppI40BUOkd4ytO87v9gDRIgWsm_UXt84aMVd_6v8_pPt_ZACSm-km9RlQ",
+        imageUrl: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
         documentationUrl: "https://expressjs.com/"
     },
     {

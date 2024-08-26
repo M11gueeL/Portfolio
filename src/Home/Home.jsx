@@ -29,13 +29,13 @@ const Home = () => {
 	      </section>
       </div>
 
-      <section className="text-center py-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
-        <div className="p-14 mt-0">
-          <h2 className="text-3xl font-bold mb-6">Sobre mi</h2>
-          <p className="text-xl sm:text-left">
-            Soy estudiante de Ingeniería en Informática en Venezuela, apasionado por el desarrollo de software y la constante innovación.
+      <section className="py-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
+        <div className="px-8 text-left sm:text-center sm:p-14 mt-0">
+          <h2 className="text-3xl text-center font-bold mb-6">Sobre mi</h2>
+          <p className="text-xl sm:text-center text-left">
+            Soy estudiante de Ingeniería en Informática en Venezuela, apasionado por el desarrollo web y la constante innovación.
             Me mantengo actualizado en las últimas tendencias tecnológicas y disfruto de aplicar mis conocimientos en proyectos prácticos.
-            Actualmente busco oportunidades para seguir creciendo profesionalmente y contribuir a la construcción de soluciones tecnológicas que generen resultados positivos.
+            Actualmente busco oportunidades para seguir creciendo profesionalmente y contribuir al desarrollo de soluciones tecnológicas que generen resultados positivos.
           </p>
         </div>
 
