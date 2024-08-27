@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="flex flex-col items-start md:items-center">
             <h1 className="text-3xl font-bold mb-2">Social</h1>
             <ul className="flex space-x-4 text-xl">
-              <li><a href="#"><i className="fa-brands fa-linkedin-in"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b"><i className="fa-brands fa-linkedin-in"></i></a></li>
               <li><a href="https://github.com/M11gueeL"><i className="fa-brands fa-github"></i></a></li>
               <li><a href="mailto:monasteriomiguelangel81@gmail.com" ><i className="fa-regular fa-envelope"></i></a></li>
             </ul>
