@@ -2,7 +2,7 @@ export const ProjectsData = [
   {
     title: "Calculadora Básica",
     description: "Calculadora de operaciones aritméticas básicas creada utilizando HTML, Tailwind CSS y JavaScript.",
-    imageUrl: "https://i.ibb.co/rQK2KWr/anotherbasiccalculator.png",
+    imageUrl: "https://i.postimg.cc/Tw7gN4RB/anotherbasiccalculator.png",
     link: "https://anotherbasiccalculator.netlify.app/",
     repo: "https://github.com/M11gueeL/Calculator"
   },
