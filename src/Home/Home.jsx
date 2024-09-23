@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import Skills from './Skills/Skills';
 import WorkExperience from './WorkExperience/WorkExperience';
+import ScrollToTop from './../Components/ScrollToTop/ScrollToTop';
 
 const Home = () => {
   return (
     <div className="flex-1 bg-gradient-to-bl from-blue-400 to-black pt-14">
+      <ScrollToTop />
       <div className="pt-10">
       	<section className="mb-12 justify-center max-w-2xl sm:mx-8 md:mx-auto bg-gray-100 shadow-lg sm:rounded-lg p-8">
 	        <div className="flex justify-center mb-6">

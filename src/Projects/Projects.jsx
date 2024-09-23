@@ -1,8 +1,10 @@
 import { ProjectsData } from './ProjectsData.js'
+import ScrollToTop from './../Components/ScrollToTop/ScrollToTop'
 
 const Projects = () => {
   return (
     <main className="flex-1 py-10 bg-gradient-to-bl from-blue-400 to-black" id="projects">
+      <ScrollToTop />
       <div className="py-10 px-6 sm:p-14 text-center text-white">
         <h2 className="text-center text-3xl font-bold mb-2">Proyectos</h2>
         <p className="text-xl sm:text-left">

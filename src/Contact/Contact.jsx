@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import ScrollToTop from './../Components/ScrollToTop/ScrollToTop';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('manwlajr');
@@ -22,6 +23,7 @@ const Contact = () => {
 
   return (
     <main className="flex-1 pt-32 pb-8 bg-gradient-to-bl from-blue-400 to-black" id="contact">
+      <ScrollToTop />
       <section className="mb-12 max-w-2xl sm:mx-8 md:mx-auto bg-gray-50 shadow-lg sm:rounded-lg sm:p-8">
         <div className="p-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Contáctame</h2>
