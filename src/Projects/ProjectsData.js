@@ -35,4 +35,11 @@ export const ProjectsData = [
     link: "https://66ccda6b310e990486bb97e1--grand-croissant-d91b39.netlify.app/",
     repo: "https://github.com/M11gueeL/weatherApp"
   },
+  {
+    title: "Infinite Instant",
+    description: "Amplia galería de imágenes desarrollada con React JS y Tailwind CSS. ",
+    imageUrl: "https://i.postimg.cc/7hrdN0vv/Infinite-Instant.png",
+    link: "https://infiniteinstant.netlify.app/",
+    repo: "https://github.com/M11gueeL/InfiniteInstant"
+  }
 ];
