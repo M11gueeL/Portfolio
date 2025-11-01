@@ -7,7 +7,7 @@
     "build:css": "tailwindcss -i ./src/css/input.css -o ./src/css/style.css",
     "dev": "vite",
     "buildDist": "vite build",
-    "build": "npm run build:css && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "keywords": [],
