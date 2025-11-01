@@ -1,7 +1,7 @@
 export const skillsData = [
     {
         name: "HTML5",
-        imageUrl: "https://www.sitepoint.com/wp-content/uploads/2011/02/HTML5_Badge_256.png",
+        imageUrl: "https://kinsta.com/wp-content/uploads/2021/03/HTML-5-Badge-Logo.png",
         documentationUrl: "https://developer.mozilla.org/es/docs/Web/HTML"
     },
     {
@@ -31,7 +31,7 @@ export const skillsData = [
     },
     {
         name: "Express",
-        imageUrl: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+        imageUrl: "https://cdn.worldvectorlogo.com/logos/expressjs.svg",
         documentationUrl: "https://expressjs.com/"
     },
     {
@@ -53,5 +53,20 @@ export const skillsData = [
         name: "MySQL",
         imageUrl: "https://www.kreaweb.be/wp-content/uploads/2023/03/mysql.webp",
         documentationUrl: "https://dev.mysql.com/doc/"
+    },
+    {
+        name: "PHP",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png",
+        documentationUrl: "https://www.php.net/docs.php"
+    },
+    {
+        name: "Java",
+        imageUrl: "https://images.icon-icons.com/2415/PNG/512/java_original_logo_icon_146458.png",
+        documentationUrl: "https://docs.oracle.com/en/java/"
+    },
+    {
+        name: "C#",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1820px-Logo_C_sharp.svg.png",
+        documentationUrl: "https://learn.microsoft.com/en-us/dotnet/csharp/"
     }
 ];
