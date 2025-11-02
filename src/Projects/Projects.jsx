@@ -13,7 +13,7 @@ const Projects = () => {
   }, []);
 
   return (
-  <main className="flex-1 py-14 bg-linear-to-bl from-slate-900 via-slate-800 to-black" id="projects">
+  <main className="flex-1 py-18 bg-linear-to-bl from-slate-900 via-slate-800 to-black" id="projects">
       <ScrollToTop />
 
       <FadeInSection>
