@@ -265,3 +265,23 @@
 [data-theme="light"] header .md\:hidden .download-cv-btn svg {
   color: #ffffff !important;
 }
+
+/* Make project badge numbers visible in light theme */
+[data-theme="light"] .project-badge {
+  color: var(--text-primary) !important;
+  background: rgba(255,255,255,0.12) !important; /* keep soft contrast */
+}
+
+[data-theme="light"] .project-badge svg {
+  color: #2563EB !important; /* blue accent */
+}
+
+/* More specific: ensure the number inside the badge is dark in light theme */
+[data-theme="light"] .project-badge .project-number {
+  color: var(--primary-500) !important; /* use brand blue in light theme */
+}
+
+/* Ensure in dark theme the badge number stays white */
+[data-theme="dark"] .project-badge .project-number {
+  color: #ffffff !important;
+}

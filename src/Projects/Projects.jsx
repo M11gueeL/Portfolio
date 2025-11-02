@@ -53,12 +53,12 @@ const Projects = () => {
                   </div>
 
                   {/* Project ID badge with icon */}
-                  <div className="ml-4 shrink-0">
-                    <div className="inline-flex items-center gap-2 bg-white/6 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="ml-4 shrink-0">
+                    <div className="inline-flex items-center gap-2 bg-white/6 px-3 py-1 rounded-full text-sm font-medium project-badge">
                       <svg className="w-4 h-4 text-blue-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 5v14M5 12h14" stroke="#93C5FD" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      <span>{index + 1}</span>
+                      <span className="project-number">{index + 1}</span>
                     </div>
                   </div>
                 </div>
