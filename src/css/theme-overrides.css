@@ -41,10 +41,27 @@
   box-shadow: var(--panel-shadow) !important;
 }
 
-/* Logo background */
-[data-theme="light"] header .rounded-full.w-10.h-10 {
+/* Logo background (apply ONLY when it's not the explicit image container) */
+[data-theme="light"] header .rounded-full.w-10.h-10:not(.logo-img-container),
+[data-theme="light"] header .rounded-full.w-12.h-12:not(.logo-img-container) {
   background: linear-gradient(90deg,var(--primary-500),var(--primary-400)) !important;
   box-shadow: 0 8px 22px rgba(59,130,246,0.12) !important;
+}
+
+/* If the rounded logo contains an <img>, don't apply the decorative bg/shadow so the image shows clean */
+[data-theme="light"] header .rounded-full.w-10.h-10 img,
+[data-theme="light"] header .rounded-full.w-12.h-12 img {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* When we explicitly wrap the logo in .logo-img-container, clear
+   any decorative background or shadow so PNG transparency shows page bg */
+[data-theme="light"] header .logo-img-container.rounded-full.w-10.h-10,
+[data-theme="light"] header .logo-img-container.rounded-full.w-12.h-12 {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Nav link colors */

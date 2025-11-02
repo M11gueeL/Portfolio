@@ -9,10 +9,8 @@ const Footer = () => {
           {/* Brand / About */}
           <div>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 16c2-4 4-8 7-8s5 4 7 8" stroke="#EFF6FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-md">
+                <img src="/icons/MiguelangelLogo.png" alt="Miguelangel logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Miguelangel Monasterio</h3>

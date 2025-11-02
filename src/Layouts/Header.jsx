@@ -59,13 +59,9 @@ const Header = () => {
         <div className="flex items-center justify-between gap-4 p-4">
           {/* Logo */}
           <NavLink to="/" onClick={handleNavClick} className="flex items-center gap-3">
-            <div className="rounded-full w-10 h-10 flex items-center justify-center bg-linear-to-br from-blue-400 via-blue-500 to-blue-700 shadow-md">
-              {/* improved logo: abstract wave / M mark */}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="6" fill="#0F172A" opacity="0.08" />
-                <path d="M4 16c2-4 4-8 7-8s5 4 7 8" stroke="#EFF6FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4 12c2-2 4-4 7-4s5 2 7 4" stroke="#BFDBFE" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="logo-img-container rounded-full w-10 h-10 flex items-center justify-center overflow-hidden shadow-md">
+              {/* Use provided logo from public/icons */}
+              <img src="/icons/MiguelangelLogo.png" alt="Miguelangel logo" className="w-full h-full object-cover" />
             </div>
             <div className="text-left">
               {/* Show gradient clipped name only in dark mode; plain dark text in light mode */}
@@ -157,11 +153,8 @@ const Header = () => {
           {/* mini header */}
           <div className="pt-6">
             <div className="flex items-center justify-center gap-3">
-              <div className="rounded-full w-12 h-12 flex items-center justify-center bg-linear-to-br from-blue-500 via-blue-600 to-blue-700 shadow-md">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="2" width="20" height="20" rx="6" fill="#0F172A" opacity="0.06" />
-                  <path d="M4 16c2-4 4-8 7-8s5 4 7 8" stroke="#EFF6FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="logo-img-container rounded-full w-12 h-12 overflow-hidden flex items-center justify-center shadow-md">
+                <img src="/icons/MiguelangelLogo.png" alt="Miguelangel logo" className="w-full h-full object-cover" />
               </div>
               <div className="text-left">
                 <div className="text-lg font-bold text-white">Miguelangel Monasterio</div>
