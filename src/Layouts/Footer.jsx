@@ -1,35 +1,69 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-6 py-8">
-      <section className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          
-          <div className="mb-4 md:mb-0 max-w-md">
-            <h1 className="text-3xl font-bold">Miguelangel Monasterio</h1>
-            <p className="text-xs mt-2">
-              Un apasionado desarrollador web que se dedica a crear y gestionar sitios y aplicaciones web que no solo cumplen con su función, sino que también impulsan el éxito de los productos y servicios que representan.         
-            </p>
+    <footer className="pt-12 pb-8 bg-linear-to-bl from-slate-900 via-slate-800 to-black text-gray-200">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          {/* Brand / About */}
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 16c2-4 4-8 7-8s5 4 7 8" stroke="#EFF6FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">Miguelangel Monasterio</h3>
+                <p className="text-sm text-gray-400">Frontend Developer · UI/UX</p>
+              </div>
+            </div>
+
+            <p className="mt-4 text-sm text-gray-300 max-w-sm">Diseño y desarrollo interfaces con enfoque en usabilidad, accesibilidad y rendimiento. Disponible para proyectos freelance y colaboraciones.</p>
+
+            <div className="mt-6">
+              <a href="/resume.pdf" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-md font-semibold shadow-md">Descargar CV</a>
+            </div>
           </div>
-          
-          <div className="flex flex-col items-start md:items-center">
-            <h1 className="text-3xl font-bold mb-2">Social</h1>
-            <ul className="flex space-x-4 text-xl">
-              <li><a href="https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b"><i className="fa-brands fa-linkedin-in"></i></a></li>
-              <li><a href="https://github.com/M11gueeL"><i className="fa-brands fa-github"></i></a></li>
-              <li><a href="mailto:monasteriomiguelangel81@gmail.com" ><i className="fa-regular fa-envelope"></i></a></li>
-            </ul>
+
+          {/* Quick links */}
+          <div className="flex justify-start md:justify-center">
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">Enlaces</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/" className="text-gray-300 hover:text-white transition">Inicio</Link></li>
+                <li><Link to="/projects" className="text-gray-300 hover:text-white transition">Proyectos</Link></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white transition">Contactarme</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social / Contact */}
+          <div className="flex flex-col items-start md:items-end">
+            <h4 className="text-lg font-semibold text-white mb-3">Contacto</h4>
+
+            <div className="flex items-center gap-3 text-gray-300">
+              <a href="https://github.com/M11gueeL" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-2xl">
+                <i className="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-2xl">
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:monasteriomiguelangel81@gmail.com" className="hover:text-white transition text-2xl">
+                <i className="fa-regular fa-envelope"></i>
+              </a>
+            </div>
+
+            <p className="mt-4 text-sm text-gray-400">¿Prefieres contacto directo? <a className="text-white underline" href="mailto:monasteriomiguelangel81@gmail.com">Envíame un correo</a></p>
           </div>
         </div>
-        
-        <div className="mt-8 md:mt-12">
-          <hr className="border-t border-white opacity-30 mb-4" />
-          <div className="text-center">
-            <p className="text-sm">© Copyright 2024. Hecho por Miguelangel Monasterio</p>
-          </div>
+
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
+          <div className="mb-2">© {new Date().getFullYear()}. Hecho por Miguelangel Monasterio</div>
+          <div>Diseño y desarrollo — Hecho con React + Tailwind</div>
         </div>
-      </section>
+      </div>
     </footer>
   );
 };
