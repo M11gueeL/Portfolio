@@ -3,6 +3,26 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    try {
+      const stored = localStorage.getItem('theme');
+      if (stored) return stored;
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+    } catch (e) {
+      /* ignore */
+    }
+    return 'dark';
+  });
+
+  // apply theme to <html> and persist
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    } catch (e) {
+      /* ignore in SSR or restricted env */
+    }
+  }, [theme]);
 
   const toggleMenu = () => setIsMenuOpen(v => !v);
 
@@ -48,7 +68,7 @@ const Header = () => {
               </svg>
             </div>
             <div className="text-left">
-              <div className="text-sm font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-500 to-blue-600">Miguelangel Monasterio</div>
+              <div className="site-name text-sm font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-500 to-blue-600">Miguelangel Monasterio</div>
               <div className="text-[11px] text-gray-400">Frontend · UI / UX</div>
             </div>
           </NavLink>
@@ -63,28 +83,43 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="hidden md:inline-block text-sm font-medium px-4 py-2 rounded-lg bg-linear-to-r from-blue-600 to-blue-500 border border-blue-700 text-white hover:shadow-lg transition-all">Descargar CV</button>
+            <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="hidden md:inline-block download-cv-btn text-sm font-medium px-4 py-2 rounded-lg bg-linear-to-r from-blue-600 to-blue-500 border border-blue-700 text-white hover:shadow-lg transition-all">Descargar CV</button>
+
+            {/* Theme toggle */}
+            <button
+              onClick={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}
+              aria-pressed={theme === 'light'}
+              aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+              className="theme-toggle-btn p-2 rounded-lg bg-gray-800/20 hover:bg-gray-800/40 text-white transition-all"
+            >
+              {theme === 'dark' ? (
+                /* show sun icon when currently dark (click => light) */
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3v2M12 19v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.4"/>
+                </svg>
+              ) : (
+                /* show moon icon when currently light (click => dark) */
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </button>
 
             {/* Mobile menu button */}
             <button
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 text-gray-100 transition-transform duration-300"
+              className="mobile-menu-btn md:hidden p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 text-gray-100 transition-transform duration-300"
             >
               {isMenuOpen ? (
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 18L18 6M6 6l12 12" stroke="url(#g)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  <defs>
-                    <linearGradient id="g" x1="0" x2="1">
-                      <stop offset="0" stopColor="#3B82F6" />
-                      <stop offset="1" stopColor="#60A5FA" />
-                    </linearGradient>
-                  </defs>
+                  <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               ) : (
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 6h16M4 12h16M4 18h16" stroke="#F3F4F6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
             </button>
@@ -98,12 +133,12 @@ const Header = () => {
         aria-hidden={!isMenuOpen}
       >
         {/* backdrop: clicking it closes the menu */}
-        <div onClick={() => setIsMenuOpen(false)} className={`absolute inset-0 bg-black/60 backdrop-blur-sm`}></div>
+          <div onClick={() => setIsMenuOpen(false)} className={`absolute inset-0 bg-black/60 backdrop-blur-sm`}></div>
         <div onClick={(e) => e.stopPropagation()} className={`relative min-h-full flex flex-col justify-between text-center px-6 py-8`}>
           {/* close button top-right inside overlay */}
-          <button onClick={() => setIsMenuOpen(false)} aria-label="Cerrar menú" className="absolute top-6 right-6 p-2 rounded-full bg-white/6 border border-white/10 text-white">
+          <button onClick={() => setIsMenuOpen(false)} aria-label="Cerrar menú" className="overlay-close-btn absolute top-6 right-6 p-2 rounded-full bg-white/6 border border-white/10 text-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 18L18 6M6 6l12 12" stroke="#E0F2FE" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -124,11 +159,11 @@ const Header = () => {
           </div>
 
           {/* body: links */}
-          <div className="flex flex-col items-center justify-center gap-6">
+            <div className="flex flex-col items-center justify-center gap-6">
             <NavLink to="/" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Home</NavLink>
             <NavLink to="/projects" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Proyectos</NavLink>
             <NavLink to="/contact" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Contactarme</NavLink>
-            <button onClick={() => { handleNavClick(); import('../utils/downloadResume').then(m => m.default()); }} className="mt-2 inline-block px-8 py-3 rounded-md bg-blue-600 text-white font-semibold shadow-lg">Descargar CV</button>
+            <button onClick={() => { handleNavClick(); import('../utils/downloadResume').then(m => m.default()); }} className="mt-2 inline-block download-cv-btn px-8 py-3 rounded-md bg-blue-600 text-white font-semibold shadow-lg">Descargar CV</button>
           </div>
 
           {/* mini footer: social links */}

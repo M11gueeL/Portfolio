@@ -39,7 +39,7 @@ const Projects = () => {
                 </a>
 
                 {/* overlay title */}
-                <div className="absolute bottom-6 left-6 bg-linear-to-r from-black/40 to-black/20 backdrop-blur-md px-4 py-2 rounded-lg text-white">
+                <div className="absolute bottom-6 left-6 bg-linear-to-r from-black/40 to-black/20 backdrop-blur-md px-4 py-2 rounded-lg text-white project-overlay-title">
                   <h3 className="text-xl font-bold">{project.title}</h3>
                 </div>
               </div>

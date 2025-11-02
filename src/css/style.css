@@ -96,3 +96,5 @@ input, textarea, select, button { transition: box-shadow 200ms var(--ease-defaul
 @media (prefers-reduced-motion: reduce) {
 	.animated-gradient-text { animation: none !important; }
 }
+
+

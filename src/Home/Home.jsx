@@ -25,7 +25,7 @@ const Home = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
-                <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</button>
+                <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="inline-flex items-center justify-center download-cv-btn px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</button>
                 <Link to="/projects" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium">Ver proyectos</Link>
               </div>
             </div>
@@ -40,7 +40,7 @@ const Home = () => {
                   className="w-full object-cover h-72 sm:h-96 transform hover:scale-105 transition duration-500"
                 />
               </div>
-              <div className="absolute -bottom-6 left-6 bg-linear-to-r from-blue-600 to-blue-400 text-white px-4 py-2 rounded-lg shadow-lg text-sm">Disponible para colaborar</div>
+              <div className="absolute -bottom-6 left-6 bg-linear-to-r from-blue-600 to-blue-400 text-white px-4 py-2 rounded-lg shadow-lg text-sm available-badge">Disponible para colaborar</div>
             </div>
           </FadeInSection>
         </div>

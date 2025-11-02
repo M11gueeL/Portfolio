@@ -23,7 +23,7 @@ const ScrollToTop = () => {
           pointer-events-auto
           ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
           transform transition-all duration-300 ease-out
-          bg-linear-to-br from-blue-600 to-blue-500 text-white
+          bg-linear-to-br from-blue-600 to-blue-500 text-white scroll-to-top-btn
           p-3 sm:p-4 rounded-full shadow-2xl
           flex items-center justify-center
           w-11 h-11 sm:w-14 sm:h-14

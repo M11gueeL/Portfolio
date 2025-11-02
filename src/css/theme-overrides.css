@@ -1,0 +1,234 @@
+/* Comprehensive light theme overrides
+   This file contains rules applied when <html data-theme="light"> is set.
+   It targets structural selectors (header, footer, main, sections) and
+   common utility classes to adapt dark-tailwind classes into a polished
+   blue/white light theme without changing the dark default. */
+
+[data-theme="light"] {
+  --bg-page: linear-gradient(180deg,#ffffff 0%, #f7fbff 100%);
+  --surface: #ffffff;
+  --muted: #556070;
+  --text-primary: #071129; /* dark navy */
+  --text-secondary: #334155; /* slate-700 */
+  --primary-500: #3B82F6;
+  --primary-400: #60A5FA;
+  --glass-border: rgba(15,46,89,0.06);
+  --panel-shadow: 0 12px 36px rgba(15,40,80,0.06);
+}
+
+/* Base page background & text */
+[data-theme="light"] body,
+[data-theme="light"] main {
+  background: var(--bg-page) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Make common dark text utilities readable in light mode */
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-gray-100,
+[data-theme="light"] .text-gray-200,
+[data-theme="light"] .text-gray-300,
+[data-theme="light"] .text-gray-400 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .text-gray-400 { color: var(--text-secondary) !important; }
+
+/* Header: bright glass panel */
+[data-theme="light"] header .mx-auto.max-w-6xl {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(246,251,255,0.9)) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--panel-shadow) !important;
+}
+
+/* Logo background */
+[data-theme="light"] header .rounded-full.w-10.h-10 {
+  background: linear-gradient(90deg,var(--primary-500),var(--primary-400)) !important;
+  box-shadow: 0 8px 22px rgba(59,130,246,0.12) !important;
+}
+
+/* Nav link colors */
+[data-theme="light"] header nav a,
+[data-theme="light"] header .nav-item,
+[data-theme="light"] header .text-left {
+  color: var(--text-primary) !important;
+}
+
+/* Specific adjustments for header elements in light mode */
+[data-theme="light"] .site-name {
+  /* remove the dark-mode gradient text effect and use a clean brand color */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: var(--primary-500) !important;
+}
+
+[data-theme="light"] .theme-toggle-btn {
+  background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(96,165,250,0.06)) !important;
+  border: 1px solid rgba(59,130,246,0.12) !important;
+  color: var(--primary-500) !important;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.06) !important;
+}
+
+[data-theme="light"] .mobile-menu-btn {
+  background: rgba(10,20,40,0.06) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(10,20,40,0.04) !important;
+}
+
+[data-theme="light"] .overlay-close-btn {
+  background: rgba(15,40,80,0.06) !important;
+  border: 1px solid rgba(15,40,80,0.08) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .overlay-close-btn svg path { stroke: currentColor !important; }
+
+/* Force scroll-to-top icon to remain white in all themes */
+[data-theme="light"] .scroll-to-top-btn { color: #ffffff !important; }
+[data-theme="light"] .scroll-to-top-btn svg { color: #ffffff !important; }
+
+/* In light mode show a white rounded background behind the site-name so letters don't 'bleed' */
+[data-theme="light"] .site-name {
+  background: rgba(255,255,255,0.96) !important;
+  padding: 2px 8px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  box-shadow: 0 6px 18px rgba(15,40,80,0.04) !important;
+  color: var(--primary-500) !important;
+}
+
+/* Ensure CV download buttons always have white text in light theme */
+[data-theme="light"] .download-cv-btn {
+  color: #ffffff !important;
+}
+
+/* Ensure mobile download button inside overlay also shows white text */
+[data-theme="light"] .download-cv-btn svg { color: #ffffff !important; }
+
+/* Ensure the 'Disponible para colaborar' badge text stays white */
+[data-theme="light"] .available-badge { color: #ffffff !important; }
+
+/* Ensure project image overlay titles remain white in light theme */
+[data-theme="light"] .project-overlay-title,
+[data-theme="light"] .project-overlay-title h3 { color: #ffffff !important; }
+
+/* Header buttons (download / toggle) */
+[data-theme="light"] header .inline-block,
+[data-theme="light"] header button {
+  color: inherit !important;
+}
+
+/* Mobile overlay: convert dark backdrop to soft light panel */
+[data-theme="light"] header .md\:hidden.fixed.inset-0.z-40 {
+  background: rgba(255,255,255,0.98) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] header .md\:hidden .absolute.inset-0 {
+  background: rgba(10,20,40,0.04) !important; /* faint veil behind the panel */
+}
+
+[data-theme="light"] header .md\:hidden .relative.min-h-full {
+  background: transparent !important;
+}
+
+/* Hero and section panels that used dark translucent backgrounds */
+[data-theme="light"] .backdrop-blur-sm {
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(248,252,255,0.75)) !important;
+  border: 1px solid rgba(15,46,89,0.04) !important;
+  box-shadow: 0 10px 30px rgba(15,40,80,0.04) !important;
+}
+
+/* Rounded white cards and image panels */
+[data-theme="light"] .rounded-2xl {
+  background: linear-gradient(180deg, #ffffff, #fbfdff) !important;
+  border: 1px solid rgba(15,46,89,0.04) !important;
+}
+
+[data-theme="light"] .shadow-2xl,
+[data-theme="light"] .shadow-lg,
+[data-theme="light"] .shadow-md {
+  box-shadow: 0 12px 36px rgba(15,40,80,0.06) !important;
+}
+
+/* Buttons: preserve brand blue but keep soft shadows */
+[data-theme="light"] .bg-blue-600,
+[data-theme="light"] .bg-blue-500,
+[data-theme="light"] .bg-linear-to-r {
+  background: linear-gradient(90deg,var(--primary-500),var(--primary-400)) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 30px rgba(59,130,246,0.12) !important;
+}
+
+/* Links underline gradient tuned for light background */
+[data-theme="light"] .link-underline::after {
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-400)) !important;
+}
+
+/* Footer: bright layout */
+[data-theme="light"] footer {
+  background: linear-gradient(180deg,#ffffff,#f8fbff) !important;
+  color: var(--text-primary) !important;
+  border-top: 1px solid rgba(15,46,89,0.04) !important;
+}
+
+[data-theme="light"] footer .text-gray-300,
+[data-theme="light"] footer .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+/* Contact forms / inputs */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #fff !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(15,46,89,0.06) !important;
+  box-shadow: 0 6px 18px rgba(11,17,32,0.04) inset !important;
+}
+
+/* Make images / badges stand out with subtle outlines */
+[data-theme="light"] img {
+  filter: none !important;
+}
+
+/* Project / skill / experience card titles and body text */
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4, [data-theme="light"] p, [data-theme="light"] li {
+  color: var(--text-primary) !important;
+}
+
+/* Accessibility: ensure contrast for smaller text */
+[data-theme="light"] .text-sm, [data-theme="light"] .text-xs {
+  color: var(--text-secondary) !important;
+}
+
+/* Small tweak for animated gradient text to remain visible */
+[data-theme="light"] .animated-gradient-text { filter: drop-shadow(0 2px 6px rgba(16,24,40,0.06)); }
+
+/* Utility: fallback for any element relying on dark translucent overlays */
+[data-theme="light"] .bg-black\/60 { background: rgba(10,20,40,0.04) !important; }
+[data-theme="light"] .bg-white\/10 { background: rgba(15,40,80,0.03) !important; }
+
+/* Mobile specific: ensure menu buttons and social icons are dark in light theme */
+[data-theme="light"] header a, [data-theme="light"] header button, [data-theme="light"] header .text-2xl { color: var(--text-primary) !important; }
+
+/* Make sure any previously-white text in components becomes dark */
+[data-theme="light"] /* (removed overly-specific utility selector) */
+
+/* Final safety: prefer variables where possible */
+[data-theme="light"] :where(.card, .panel) { background: var(--surface) !important; }
+
+/* Ensure all interactive buttons and primary action elements keep white text */
+/* This overrides the global reassignment of .text-white for the few button-like elements */
+[data-theme="light"] button,
+[data-theme="light"] .download-cv-btn,
+[data-theme="light"] .available-badge,
+[data-theme="light"] .bg-blue-600,
+[data-theme="light"] .bg-blue-500,
+[data-theme="light"] .inline-flex.items-center,
+[data-theme="light"] .rounded-md {
+  color: #ffffff !important;
+}
+
+/* End of theme overrides */
