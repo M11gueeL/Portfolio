@@ -26,7 +26,13 @@ const Home = () => {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
                 <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="inline-flex items-center justify-center download-cv-btn px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</button>
-                <Link to="/projects" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium">Ver proyectos</Link>
+                {/* Improved contrast for light & dark modes: light -> pale background with dark text; dark -> translucent white with white text */}
+                <Link
+                  to="/projects"
+                  className="projects-btn inline-flex items-center justify-center px-5 py-3 rounded-md bg-white/90 text-slate-900 hover:bg-white/80 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 font-medium shadow-sm border border-transparent dark:border-white/10 transition"
+                >
+                  Ver proyectos
+                </Link>
               </div>
             </div>
           </FadeInSection>

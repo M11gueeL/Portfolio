@@ -68,7 +68,19 @@ const Header = () => {
               </svg>
             </div>
             <div className="text-left">
-              <div className="site-name text-sm font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-500 to-blue-600">Miguelangel Monasterio</div>
+              {/* Show gradient clipped name only in dark mode; plain dark text in light mode */}
+              <div
+                className={`site-name text-sm font-extrabold tracking-tight ${
+                  theme === 'light' ? '' : 'text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-500 to-blue-600'
+                }`}
+                style={
+                  theme === 'light'
+                    ? { color: 'var(--text-primary)', background: 'none', WebkitBackgroundClip: 'unset', backgroundClip: 'unset' }
+                    : {}
+                }
+              >
+                Miguelangel Monasterio
+              </div>
               <div className="text-[11px] text-gray-400">Frontend · UI / UX</div>
             </div>
           </NavLink>
