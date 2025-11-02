@@ -1,65 +1,78 @@
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Skills from './Skills/Skills';
 import WorkExperience from './WorkExperience/WorkExperience';
 import ScrollToTop from './../Components/ScrollToTop/ScrollToTop';
 import FadeInSection from './../Components/FadeInSection/FadeInSection';
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   return (
-    <div className="flex-1 bg-gradient-to-bl from-blue-400 to-black pt-14">
-      
+    <main className="min-h-screen bg-linear-to-bl from-slate-900 via-slate-800 to-black text-gray-100 pt-20">
       <ScrollToTop />
 
-      <div className="pt-10">
-        <FadeInSection >
-          <section className="mb-12 justify-center max-w-2xl sm:mx-8 md:mx-auto bg-gray-100 shadow-lg sm:rounded-lg p-8">
-            <div className="flex justify-center mb-6">
-            <img 
-            src="https://i.pinimg.com/564x/d1/35/56/d13556ec053cffc2410a682ee33436d6.jpg"
-            alt="Miguelangel" 
-            className="rounded w-68 h-48" 
-            />
-          </div>
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-              ¡Hola, soy Miguelangel Monasterio!
-            </h2>
-            <p className="text-center text-gray-600 mb-8">
-               Un apasionado desarrollador web que se dedica a crear y gestionar sitios y aplicaciones web que no solo cumplen con su función, sino que también impulsan el éxito de los productos y servicios que representan.
-            </p>
-            <div className="flex justify-center">
-              <button className="bg-blue-400   py-3 px-10 text-white font-bold rounded transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-                <Link to="/projects" className="text-center text-xl">Proyectos</Link>
-              </button>
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <FadeInSection>
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+                <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-200">Miguelangel Monasterio</span>
+                <span className="block text-lg text-gray-300 mt-2">Frontend Developer · UI / UX</span>
+              </h1>
+
+              <p className="text-lg text-gray-300 max-w-2xl">
+                Creo interfaces limpias, accesibles y con performance. Diseño experiencias que conectan usuarios con producto, y construyo frontends sólidos usando React, Tailwind y buenas prácticas.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
+                <a href="/resume.pdf" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</a>
+                <Link to="/projects" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium">Ver proyectos</Link>
+              </div>
             </div>
-          </section>
-        </FadeInSection>
-      </div>
+          </FadeInSection>
 
-      <section className="py-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
-        <div className="px-8 text-left sm:text-center sm:p-14 mt-0">
-          <h2 className="text-3xl text-center font-bold mb-6">Sobre mi</h2>
-          <p className="text-xl sm:text-center text-left">
-            Soy estudiante de Ingeniería en Informática en Venezuela, apasionado por el desarrollo web y la constante innovación.
-            Me mantengo actualizado en las últimas tendencias tecnológicas y disfruto de aplicar mis conocimientos en proyectos prácticos.
-            Actualmente busco oportunidades para seguir creciendo profesionalmente y contribuir al desarrollo de soluciones tecnológicas que generen resultados positivos.
-          </p>
+          <FadeInSection>
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/6 bg-linear-to-tr from-white/3 to-white/6">
+                <img
+                  src="https://i.pinimg.com/564x/d1/35/56/d13556ec053cffc2410a682ee33436d6.jpg"
+                  alt="Miguelangel"
+                  className="w-full object-cover h-72 sm:h-96 transform hover:scale-105 transition duration-500"
+                />
+              </div>
+              <div className="absolute -bottom-6 left-6 bg-linear-to-r from-blue-600 to-blue-400 text-white px-4 py-2 rounded-lg shadow-lg text-sm">Disponible para colaborar</div>
+            </div>
+          </FadeInSection>
         </div>
+      </section>
 
+      {/* About + Skills */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="md:flex md:items-start md:gap-10">
+            <div className="md:w-1/3">
+              <h2 className="text-2xl font-bold mb-3">Sobre mí</h2>
+              <p className="text-gray-300">
+                Soy estudiante de Ingeniería en Informática en Venezuela, apasionado por el desarrollo web y la constante innovación. Busco oportunidades para crear productos con impacto.
+              </p>
+            </div>
+
+            <div className="md:flex-1 mt-8 md:mt-0">
+              <FadeInSection>
+                <Skills />
+              </FadeInSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
         <FadeInSection>
-          <Skills />
+          <WorkExperience />
         </FadeInSection>
       </section>
-      <FadeInSection>
-        <WorkExperience />
-      </FadeInSection>
-    </div>
+    </main>
   );
 };
 
