@@ -16,7 +16,7 @@ const Home = () => {
           <FadeInSection>
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-200">Miguelangel Monasterio</span>
+                <span className="block animated-gradient-text">Miguelangel Monasterio</span>
                 <span className="block text-lg text-gray-300 mt-2">Frontend Developer · UI / UX</span>
               </h1>
 
@@ -35,7 +35,7 @@ const Home = () => {
             <div className="relative mx-auto w-full max-w-md">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/6 bg-linear-to-tr from-white/3 to-white/6">
                 <img
-                  src="https://i.pinimg.com/564x/d1/35/56/d13556ec053cffc2410a682ee33436d6.jpg"
+                  src="https://i.pinimg.com/736x/70/2e/b3/702eb327186a62e6bfab5be1e40a1b77.jpg"
                   alt="Miguelangel"
                   className="w-full object-cover h-72 sm:h-96 transform hover:scale-105 transition duration-500"
                 />
@@ -53,7 +53,7 @@ const Home = () => {
             <div className="md:w-1/3">
               <h2 className="text-2xl font-bold mb-3">Sobre mí</h2>
               <p className="text-gray-300">
-                Soy estudiante de Ingeniería en Informática en Venezuela, apasionado por el desarrollo web y la constante innovación. Busco oportunidades para crear productos con impacto.
+                Soy TSU en Informática y actualmente estudiante de Ingeniería en Informática en Venezuela. Me apasiona el desarrollo web y la constante innovación, por lo que me mantengo actualizado en las últimas tendencias tecnológicas. Busco activamente oportunidades para crear productos con impacto y contribuir al desarrollo de soluciones que generen resultados positivos.
               </p>
             </div>
 

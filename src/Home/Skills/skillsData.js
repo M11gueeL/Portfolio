@@ -1,7 +1,7 @@
 export const skillsData = [
     {
         name: "HTML5",
-        imageUrl: "https://kinsta.com/wp-content/uploads/2021/03/HTML-5-Badge-Logo.png",
+        imageUrl: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
         documentationUrl: "https://developer.mozilla.org/es/docs/Web/HTML"
     },
     {

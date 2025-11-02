@@ -75,3 +75,24 @@
 
 /* Slight global input transition */
 input, textarea, select, button { transition: box-shadow 200ms var(--ease-default), transform 120ms var(--ease-default); }
+
+/* Animated gradient text (smooth, subtle, elegant) */
+@keyframes gradientShift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+.animated-gradient-text {
+	/* palette tuned to existing blues used in the site */
+	background: linear-gradient(90deg, #60A5FA 0%, #3B82F6 25%, #7DD3FC 50%, #60A5FA 75%, #93C5FD 100%);
+	background-size: 200% 200%;
+	animation: gradientShift 6s ease-in-out infinite;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animated-gradient-text { animation: none !important; }
+}
