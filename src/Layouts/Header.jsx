@@ -63,7 +63,7 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <a href="/resume.pdf" className="hidden md:inline-block text-sm font-medium px-4 py-2 rounded-lg bg-linear-to-r from-blue-600 to-blue-500 border border-blue-700 text-white hover:shadow-lg transition-all">Descargar CV</a>
+            <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="hidden md:inline-block text-sm font-medium px-4 py-2 rounded-lg bg-linear-to-r from-blue-600 to-blue-500 border border-blue-700 text-white hover:shadow-lg transition-all">Descargar CV</button>
 
             {/* Mobile menu button */}
             <button
@@ -128,7 +128,7 @@ const Header = () => {
             <NavLink to="/" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Home</NavLink>
             <NavLink to="/projects" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Proyectos</NavLink>
             <NavLink to="/contact" onClick={handleNavClick} className="text-2xl font-bold text-white hover:text-blue-300 transition">Contactarme</NavLink>
-            <a href="/resume.pdf" onClick={handleNavClick} className="mt-2 inline-block px-8 py-3 rounded-md bg-blue-600 text-white font-semibold shadow-lg">Descargar CV</a>
+            <button onClick={() => { handleNavClick(); import('../utils/downloadResume').then(m => m.default()); }} className="mt-2 inline-block px-8 py-3 rounded-md bg-blue-600 text-white font-semibold shadow-lg">Descargar CV</button>
           </div>
 
           {/* mini footer: social links */}

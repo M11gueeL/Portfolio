@@ -25,7 +25,7 @@ const Home = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
-                <a href="/resume.pdf" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</a>
+                <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg transition">Descargar CV</button>
                 <Link to="/projects" className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium">Ver proyectos</Link>
               </div>
             </div>

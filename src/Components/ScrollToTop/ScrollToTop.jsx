@@ -3,43 +3,37 @@ import { useEffect, useState } from 'react';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
+    const onScroll = () => setIsVisible(window.pageYOffset > 300);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-6 right-6 z-50">
       <button
-        type="button"
+        aria-label="Ir arriba"
         onClick={scrollToTop}
         className={`
-          ${isVisible ? 'opacity-100' : 'opacity-0'}
-          bg-blue-500 hover:bg-blue-600
-          inline-flex items-center justify-center rounded-full text-white
-          transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2
-          w-10 h-10 sm:w-14 sm:h-14
-          shadow-lg
+          pointer-events-auto
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+          transform transition-all duration-300 ease-out
+          bg-linear-to-br from-blue-600 to-blue-500 text-white
+          p-3 sm:p-4 rounded-full shadow-2xl
+          flex items-center justify-center
+          w-11 h-11 sm:w-14 sm:h-14
+          focus:outline-none focus:ring-4 focus:ring-blue-300/40
         `}
       >
-        <i className="fas fa-arrow-up text-sm sm:text-base" aria-hidden="true"></i>
+        {/* chevron up SVG - crisp and lightweight */}
+        <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 15l6-6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </button>
     </div>
   );

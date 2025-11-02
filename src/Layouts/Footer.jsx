@@ -23,7 +23,7 @@ const Footer = () => {
             <p className="mt-4 text-sm text-gray-300 max-w-sm">Diseño y desarrollo interfaces con enfoque en usabilidad, accesibilidad y rendimiento. Disponible para proyectos freelance y colaboraciones.</p>
 
             <div className="mt-6">
-              <a href="/resume.pdf" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-md font-semibold shadow-md">Descargar CV</a>
+              <button onClick={() => import('../utils/downloadResume').then(m => m.default())} className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-md font-semibold shadow-md">Descargar CV</button>
             </div>
           </div>
 
@@ -61,7 +61,6 @@ const Footer = () => {
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
           <div className="mb-2">© {new Date().getFullYear()}. Hecho por Miguelangel Monasterio</div>
-          <div>Diseño y desarrollo — Hecho con React + Tailwind</div>
         </div>
       </div>
     </footer>
