@@ -97,4 +97,94 @@ input, textarea, select, button { transition: box-shadow 200ms var(--ease-defaul
 	.animated-gradient-text { animation: none !important; }
 }
 
+/* 
+   Dark Mode / Default Button Enhancements 
+   These styles apply by default (Dark Mode) and are overridden by theme-overrides.css for Light Mode.
+*/
+
+/* Primary Buttons (Blue) */
+.bg-blue-600,
+.bg-blue-500,
+.download-cv-btn,
+button[type="submit"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-blue-600:hover,
+.bg-blue-500:hover,
+.download-cv-btn:hover,
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4); /* Blue glow */
+  filter: brightness(1.1);
+}
+
+.bg-blue-600:active,
+.bg-blue-500:active,
+.download-cv-btn:active,
+button[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* Projects Button (Dark Mode Default) */
+.projects-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Dark shadow */
+    background: rgba(255, 255, 255, 0.15); /* Slightly lighter than default hover */
+}
+
+.projects-btn:active {
+    transform: translateY(0);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-1px) rotate(15deg);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); /* Blue glow */
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Overlay Close Button */
+.overlay-close-btn {
+    transition: all 0.3s ease;
+}
+
+.overlay-close-btn:hover {
+    transform: rotate(90deg);
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* General Interactive Elements Reset */
+button:not(.bg-blue-600):not(.bg-blue-500):not(.download-cv-btn):not(.projects-btn):not([type="submit"]):not(.theme-toggle-btn):not(.mobile-menu-btn):not(.overlay-close-btn) {
+    transition: all 0.2s ease;
+}
+
+button:not(.bg-blue-600):not(.bg-blue-500):not(.download-cv-btn):not(.projects-btn):not([type="submit"]):not(.theme-toggle-btn):not(.mobile-menu-btn):not(.overlay-close-btn):hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
 

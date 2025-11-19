@@ -348,6 +348,19 @@
   box-shadow: 0 2px 6px rgba(59, 130, 246, 0.1) !important;
 }
 
+/* Mobile Menu Items Hover Effect in Light Mode */
+[data-theme="light"] header .md\:hidden .text-2xl {
+  transition: all 0.3s ease !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 0.75rem !important;
+}
+
+[data-theme="light"] header .md\:hidden .text-2xl:hover {
+  color: var(--primary-500) !important;
+  background: rgba(59, 130, 246, 0.08) !important;
+  transform: scale(1.05) !important;
+}
+
 /* End of theme overrides */
 
 /* Final safety: ensure mobile overlay Download CV button text remains white in light theme
