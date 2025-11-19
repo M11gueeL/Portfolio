@@ -361,6 +361,12 @@
   transform: scale(1.05) !important;
 }
 
+/* Footer Social Icons Hover Effect in Light Mode */
+[data-theme="light"] footer a.hover\:text-white:hover {
+  color: var(--primary-500) !important;
+  transform: translateY(-2px) !important;
+}
+
 /* End of theme overrides */
 
 /* Final safety: ensure mobile overlay Download CV button text remains white in light theme
