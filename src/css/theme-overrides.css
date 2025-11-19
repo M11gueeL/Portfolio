@@ -410,3 +410,17 @@
   opacity: 0.8;
   transform: translateY(-1px);
 }
+
+/* Loader Styles */
+.loader-bg {
+  background-color: #0f172a; /* slate-900 */
+}
+
+/* Loader Light Mode Overrides */
+[data-theme="light"] .loader-bg {
+  background-color: #ffffff !important;
+}
+
+[data-theme="light"] .loader-text {
+  color: #071129 !important; /* dark navy */
+}
