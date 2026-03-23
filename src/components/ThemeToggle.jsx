@@ -1,5 +1,4 @@
 import { useTheme } from '../hooks/useTheme';
-// Importamos los iconos profesionales de Lucide (Sun y Moon)
 import { LuSun, LuMoon } from "react-icons/lu";
 
 export const ThemeToggle = () => {
@@ -8,19 +7,47 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2.5 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-brand dark:hover:text-brand bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all group focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-950"
+      className={`
+        relative overflow-hidden p-2.5 rounded-full outline-none
+        transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+        group backdrop-blur-md shadow-sm hover:shadow-md active:scale-95
+        ${theme === 'light' 
+          ? 'bg-zinc-100 hover:bg-zinc-200 border border-zinc-200/80 text-zinc-600 hover:text-brand' 
+          : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-800/80 text-zinc-400 hover:text-brand'
+        }
+      `}
       aria-label={theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
+      title={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
     >
-      {/* Usamos un div envoltorio para manejar la animación de rotación */}
+      {/* 
+        Efecto de resplandor (Glow) sutil en hover
+      */}
+      <div className="absolute inset-0 w-full h-full bg-brand/10 dark:bg-brand/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+
+      {/* Contenedor relativo para posicionamiento superpuesto y animación cruzada */}
       <div className="relative w-5 h-5 flex items-center justify-center">
-        {theme === 'light' ? (
-          // Icono del Sol (Modo Claro) con animación de giro en hover
-          <LuMoon className="w-5 h-5 transition-transform duration-500 group-hover:-rotate-90" />
-        ) : (
-          // Icono de la Luna (Modo Oscuro) con animación de giro en hover
-          <LuSun className="w-5 h-5 transition-transform duration-500 group-hover:rotate-90" />
-          
-        )}
+        
+        {/* ICONO DEL SOL (Aparece en dark mode para pasar a light mode) */}
+        <LuSun 
+          className={`
+            absolute w-5 h-5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]
+            ${theme === 'dark' 
+              ? 'scale-100 opacity-100 rotate-0 group-hover:rotate-45 group-hover:text-brand' 
+              : 'scale-0 opacity-0 -rotate-90'
+            }
+          `} 
+        />
+        
+        {/* ICONO DE LA LUNA (Aparece en light mode para pasar a dark mode) */}
+        <LuMoon 
+          className={`
+            absolute w-5 h-5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]
+            ${theme === 'light' 
+              ? 'scale-100 opacity-100 rotate-0 group-hover:-rotate-12 group-hover:text-brand' 
+              : 'scale-0 opacity-0 rotate-90'
+            }
+          `} 
+        />
       </div>
     </button>
   );
