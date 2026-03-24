@@ -8,7 +8,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
+    <section id="contact" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
       {/* Decorative Orbs */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand/5 dark:bg-brand/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-500/5 dark:bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none translate-y-1/2" />
@@ -22,7 +22,7 @@ export const Contact = () => {
               Contacto
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
             Trabajemos <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-500">Juntos</span>
           </h2>
           <p className="mt-4 text-center text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg font-light">

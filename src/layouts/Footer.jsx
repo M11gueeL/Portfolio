@@ -31,7 +31,7 @@ export const Footer = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 group-hover:to-brand dark:group-hover:to-brand transition-all duration-300">
+                <span className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 group-hover:to-brand dark:group-hover:to-brand transition-all duration-300">
                   Miguelangel
                 </span>
                 <span className="text-sm font-medium text-brand tracking-wide">
@@ -50,7 +50,7 @@ export const Footer = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-60"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand"></span>
               </span>
-              <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 tracking-wide uppercase">
+              <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 tracking-wide">
                 Disponible para nuevos proyectos
               </span>
             </div>

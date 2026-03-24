@@ -1,10 +1,11 @@
 import { FaReact, FaLaravel } from 'react-icons/fa';
 import { LuArrowRight, LuDownload, LuCode, LuSparkles } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
     <section 
-      id="inicio" 
+      id="home" 
       className="relative flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] w-full py-20 px-6 mt-12 mb-10 overflow-hidden"
     >
       {/* --- FONDOS Y LUCES GLASSMORPHISM PREMIUM --- */}
@@ -27,23 +28,22 @@ export const Hero = () => {
         </div>
 
         {/* Titular Masivo e Impactante */}
-        <h1 className="text-5xl md:text-7xl xl:text-[80px] font-extrabold text-zinc-900 dark:text-white tracking-tight leading-[1.05] mb-6 drop-shadow-sm">
-          Transformando ideas en <br className="hidden md:block" />
+        <h1 className="text-5xl md:text-6xl xl:text-[80px] font-bold text-zinc-900 dark:text-white tracking-tight leading-[1.05] mb-6 drop-shadow-sm">
+          Construyendo ideas,<br className="hidden md:block" />
           <span className="relative inline-block mt-2 md:mt-0">
-            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-brand via-emerald-500 to-teal-400 drop-shadow-sm">
-              experiencias modernas
+            <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-brand via-emerald-500 to-teal-400 drop-shadow-sm">
+              creando experiencias modernas
             </span>
-            {/* Subrayado decorativo que se revela en hover (requiere hover del contenedor principal o dejarlo estático) */}
           </span>
         </h1>
 
-        {/* Presentación (Subtítulo) sin mencionar 'estudiante' */}
+        {/* Presentación */}
         <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-10 font-light translate-y-0">
           Hola, soy <strong className="font-semibold text-zinc-900 dark:text-zinc-200">Miguelangel Monasterio</strong>. 
-          Diseño y desarrollo interfaces atractivas con arquitecturas robustas y escalables, obsesionado con la calidad del código, el UX/UI y el rendimiento.
+          Construyo aplicaciones web escalables, priorizando el rendimiento, la calidad del código y una excelente experiencia de usuario (UX/UI).
         </p>
 
-        {/* Stack Principal Rápido (Micro-interacción) */}
+        {/* Stack Principal Rápido */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-600 dark:text-zinc-300 shadow-sm hover:border-brand/40 dark:hover:border-brand/40 hover:text-brand transition-colors group">
             <FaReact className="w-5 h-5 group-hover:animate-spin-slow transition-transform" />
@@ -60,30 +60,25 @@ export const Hero = () => {
 
         {/* Botones de Acción (CTAs Modernos) */}
         <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
-          {/* CTA Principal */}
-          <a 
-            href="#proyectos" 
+          <Link 
+            to="/projects" 
             className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl overflow-hidden transition-transform active:scale-95 shadow-xl hover:shadow-brand/20 dark:hover:shadow-brand/40"
           >
-            {/* Efecto de relleno en hover */}
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
             <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
               Explorar Proyectos
               <LuArrowRight className="w-5 h-5 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out" />
             </span>
-          </a>
+          </Link>
 
-          {/* CTA Secundario - Glassmorphism */}
-          <a 
-            href="#contacto" 
+          <Link 
+            to="/contact" 
             className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-white/70 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 backdrop-blur-xl text-zinc-900 dark:text-white font-semibold rounded-2xl transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:-translate-y-1 active:translate-y-0"
           >
             Contactarme
-          </a>
+          </Link>
         </div>
-
       </div>
-
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { 
   LuHouse, 
@@ -25,12 +26,12 @@ export const Header = () => {
 
   // Lista de secciones para la navegación con iconos
   const navLinks = [
-    { name: 'Inicio', href: '#inicio', icon: LuHouse },
-    { name: 'Sobre Mí', href: '#sobre-mi', icon: LuUser },
-    { name: 'Habilidades', href: '#habilidades', icon: LuCode },
-    { name: 'Experiencia', href: '#experiencia', icon: LuBriefcase },
-    { name: 'Proyectos', href: '#proyectos', icon: LuBriefcase },
-    { name: 'Contacto', href: '#contacto', icon: LuMail },
+    { name: 'Inicio', href: '/', icon: LuHouse },
+    { name: 'Sobre Mí', href: '/about', icon: LuUser },
+    { name: 'Habilidades', href: '/skills', icon: LuCode },
+    { name: 'Experiencia', href: '/experience', icon: LuBriefcase },
+    { name: 'Proyectos', href: '/projects', icon: LuBriefcase },
+    { name: 'Contacto', href: '/contact', icon: LuMail },
   ];
 
   return (
@@ -41,7 +42,7 @@ export const Header = () => {
           <div className="flex justify-between items-center relative">
             
             {/* 1. Izquierda: Logo y Título */}
-            <a href="#inicio" className="flex items-center gap-4 group relative z-10" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/" className="flex items-center gap-4 group relative z-10" onClick={() => setIsMobileMenuOpen(false)}>
               <img
                 src="/logo.png"
                 alt="Logo Miguelangel Monasterio"
@@ -55,16 +56,16 @@ export const Header = () => {
                   Desarrollador Web
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* 2. Medio: Navegación Limpia y Minimalista (Tablet+Desktop) */}
             <div className="hidden lg:flex gap-x-8 items-center absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link) => {
                 const Icon = link.icon;
                 return (
-                  <a
+                  <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     className="group relative flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-300 font-medium text-sm"
                   >
                     <Icon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
@@ -72,7 +73,7 @@ export const Header = () => {
                     
                     {/* Subrayado animado */}
                     <span className="absolute -bottom-1.5 left-1/2 w-0 h-0.5 bg-brand -translate-x-1/2 transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 rounded-full"></span>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -108,7 +109,7 @@ export const Header = () => {
           {/* Top Bar for Mobile Menu */}
           <div className="flex justify-between items-center px-6 py-6 w-full shrink-0 border-b border-zinc-200/50 dark:border-zinc-800/50">
             {/* Logo y título duplicado para consistencia visual */}
-             <a href="#inicio" className="flex items-center gap-3 group" onClick={() => setIsMobileMenuOpen(false)}>
+             <Link to="/" className="flex items-center gap-3 group" onClick={() => setIsMobileMenuOpen(false)}>
               <img
                 src="/logo.png"
                 alt="Logo Miguelangel"
@@ -122,7 +123,7 @@ export const Header = () => {
                   Desarrollador Web
                 </span>
               </div>
-            </a>
+            </Link>
             
             <button 
               onClick={() => setIsMobileMenuOpen(false)}
@@ -140,9 +141,9 @@ export const Header = () => {
               {navLinks.map((link, index) => {
                 const Icon = link.icon;
                 return (
-                  <a
+                  <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     // Cascading delay para cada enlace al abrir
                     style={{ transitionDelay: isMobileMenuOpen ? `${100 + (index * 50)}ms` : '0ms' }}
@@ -154,7 +155,7 @@ export const Header = () => {
                       <Icon className="w-7 h-7 text-zinc-400 dark:text-zinc-500 group-hover:text-brand transition-colors" />
                       <span>{link.name}</span>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </nav>

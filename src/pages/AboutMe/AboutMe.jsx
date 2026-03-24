@@ -4,7 +4,7 @@ import { LuGraduationCap, LuMapPin, LuBookOpen, LuArrowRight, LuUser } from 'rea
 
 export const AboutMe = () => {
   return (
-    <section id="sobre-mi" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 transition-colors duration-500">
+    <section id="about" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 transition-colors duration-500">
       {/* Decorative Background Blur */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 dark:bg-brand/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 dark:bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -19,7 +19,7 @@ export const AboutMe = () => {
               Conóceme
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight text-center md:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight text-center md:text-left">
             Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-500">Mí</span>
           </h2>
         </div>
