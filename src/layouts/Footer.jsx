@@ -35,7 +35,7 @@ export const Footer = () => {
                   Miguelangel
                 </span>
                 <span className="text-sm font-medium text-brand tracking-wide">
-                  Frontend Developer · UI/UX
+                  Desarrollador Web                 
                 </span>
               </div>
             </a>
