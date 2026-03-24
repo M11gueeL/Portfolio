@@ -1,6 +1,8 @@
 import { Hero } from './Hero/Hero';
 import { AboutMe } from './AboutMe/AboutMe';
 import { Skills } from './Skills/Skills';
+import { Experience } from './Experience/Experience';
+import { Contact } from './Contact/Contact';
 
 export const Home = () => {
   return (
@@ -8,6 +10,8 @@ export const Home = () => {
       <Hero />
       <AboutMe />
       <Skills />
+      <Experience />
+      <Contact />
     </div>
   );
 };

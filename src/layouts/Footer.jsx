@@ -6,8 +6,8 @@ export const Footer = () => {
     <footer className="relative w-full mt-auto overflow-hidden text-zinc-900 dark:text-zinc-100">
       {/* --- EFECTOS DE FONDO PARA RESPALDAR EL GLASSMORPHISM --- */}
       {/* Luces sutiles con blur para crear el efecto cristal */}
-      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-brand/10 dark:bg-brand/15 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-brand/5 dark:bg-brand/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-100 h-100 bg-brand/10 dark:bg-brand/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-75 h-75 bg-brand/5 dark:bg-brand/10 blur-[100px] rounded-full pointer-events-none" />
       
       {/* Capa de Cristal principal (Superpuesta a las luces) */}
       <div className="absolute inset-0 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl border-t border-white/60 dark:border-white/5 pointer-events-none transition-colors duration-500" />
@@ -31,7 +31,7 @@ export const Footer = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 group-hover:to-brand dark:group-hover:to-brand transition-all duration-300">
+                <span className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 group-hover:to-brand dark:group-hover:to-brand transition-all duration-300">
                   Miguelangel
                 </span>
                 <span className="text-sm font-medium text-brand tracking-wide">
@@ -81,7 +81,7 @@ export const Footer = () => {
 
           {/* Columna 3: Contacto y Redes */}
           <div className="md:col-span-4 lg:col-span-4 flex flex-col md:items-end">
-            <h3 className="text-[13px] font-bold uppercase tracking-widest text-zinc-800 dark:text-zinc-200 mb-6 relative inline-block md:text-right hidden md:block">
+            <h3 className="text-[13px] font-bold uppercase tracking-widest text-zinc-800 dark:text-zinc-200 mb-6 relative hidden md:text-right md:block">
               Redes Sociales
             </h3>
             
@@ -99,7 +99,7 @@ export const Footer = () => {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label={social.label} 
-                    className="relative group flex items-center justify-center w-[46px] h-[46px] rounded-full bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm overflow-hidden"
+                    className="relative group flex items-center justify-center w-11.5 h-11.5 rounded-full bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm overflow-hidden"
                   >
                     {/* Fondo animado que se llena hacia arriba */}
                     <span className="absolute inset-x-0 bottom-0 h-0 bg-brand/90 group-hover:h-full transition-all duration-300 ease-out z-0" />
@@ -111,7 +111,7 @@ export const Footer = () => {
             
             <a 
               href="mailto:tu-correo@ejemplo.com" 
-              className="group inline-flex items-stretch gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-medium border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 px-4 py-2 rounded-xl bg-transparent hover:bg-white/40 dark:hover:bg-zinc-900/40 backdrop-blur-sm md:mr-[-16px]"
+              className="group inline-flex items-stretch gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-medium border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 px-4 py-2 rounded-xl bg-transparent hover:bg-white/40 dark:hover:bg-zinc-900/40 backdrop-blur-sm md:mr-4"
             >
               ¿Charlamos por correo? 
               <LuArrowRight className="w-4 h-4 text-brand transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />

@@ -28,6 +28,7 @@ export const Header = () => {
     { name: 'Inicio', href: '#inicio', icon: LuHouse },
     { name: 'Sobre Mí', href: '#sobre-mi', icon: LuUser },
     { name: 'Habilidades', href: '#habilidades', icon: LuCode },
+    { name: 'Experiencia', href: '#experiencia', icon: LuBriefcase },
     { name: 'Proyectos', href: '#proyectos', icon: LuBriefcase },
     { name: 'Contacto', href: '#contacto', icon: LuMail },
   ];
@@ -70,7 +71,7 @@ export const Header = () => {
                     <span>{link.name}</span>
                     
                     {/* Subrayado animado */}
-                    <span className="absolute -bottom-1.5 left-1/2 w-0 h-[2px] bg-brand -translate-x-1/2 transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 rounded-full"></span>
+                    <span className="absolute -bottom-1.5 left-1/2 w-0 h-0.5 bg-brand -translate-x-1/2 transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 rounded-full"></span>
                   </a>
                 );
               })}
@@ -95,7 +96,7 @@ export const Header = () => {
 
       {/* OVERLAY DEL MENÚ MÓVIL FULLSCREEN */}
       <div 
-        className={`fixed inset-0 z-[100] bg-white/95 dark:bg-[#09090b]/95 backdrop-blur-3xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col justify-between ${
+        className={`fixed inset-0 z-100 bg-white/95 dark:bg-[#09090b]/95 backdrop-blur-3xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col justify-between ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >

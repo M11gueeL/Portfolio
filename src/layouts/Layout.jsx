@@ -9,7 +9,7 @@ export const Layout = () => {
       <Header />
       
       {/* Aquí es donde Outlet "inyecta" el contenido de tus páginas (Hero, Proyectos, etc) */}
-      <main className="flex-grow flex flex-col">
+      <main className="grow flex flex-col">
         <Outlet />
       </main>
       
