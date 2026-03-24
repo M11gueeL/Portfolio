@@ -28,7 +28,7 @@ export const Hero = () => {
         </div>
 
         {/* Titular Masivo e Impactante */}
-        <h1 className="text-5xl md:text-6xl xl:text-[80px] font-bold text-zinc-900 dark:text-white tracking-tight leading-[1.05] mb-6 drop-shadow-sm">
+        <h1 className="text-4xl md:text-6xl xl:text-[80px] font-bold text-zinc-900 dark:text-white tracking-tight leading-[1.05] mb-6 drop-shadow-sm">
           Construyendo ideas,<br className="hidden md:block" />
           <span className="relative inline-block mt-2 md:mt-0">
             <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-brand via-emerald-500 to-teal-400 drop-shadow-sm">

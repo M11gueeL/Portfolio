@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaRegEnvelope } from 'react-icons/fa';
 import { LuArrowRight } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -20,7 +21,7 @@ export const Footer = () => {
           
           {/* Columna 1: Branding y Perfil */}
           <div className="md:col-span-5 lg:col-span-6 flex flex-col items-start xl:pr-10">
-            <a href="/" className="flex items-center gap-4 group mb-7">
+            <Link to="/" className="flex items-center gap-4 group mb-7">
               <div className="relative">
                 {/* Glow del Logo al hacer hover */}
                 <div className="absolute inset-0 bg-brand/40 blur-md rounded-full scale-50 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -38,7 +39,7 @@ export const Footer = () => {
                   Desarrollador Web                 
                 </span>
               </div>
-            </a>
+            </Link>
             
             <p className="text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-md mb-8">
               Diseñando y desarrollando interfaces web con un alto enfoque en la estética, usabilidad y rendimiento.
@@ -63,17 +64,23 @@ export const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-4 h-0.5 bg-brand rounded-full"></span>
             </h3>
             <ul className="flex flex-col gap-4 mt-2">
-              {['Inicio', 'Sobre Mí', 'Habilidades', 'Proyectos'].map((link) => (
-                <li key={link}>
-                  <a 
-                    href={`${link.toLowerCase().replace(' ', '-')}`} 
+              {[
+                { name: 'Inicio', path: '/' },
+                { name: 'Sobre Mí', path: '/about' },
+                { name: 'Habilidades', path: '/skills' },
+                { name: 'Experiencia', path: '/experience' },
+                { name: 'Proyectos', path: '/projects' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path} 
                     className="group flex items-center gap-2 text-[15px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-medium"
                   >
                     <span className="relative overflow-hidden pb-1">
-                      {link}
+                      {link.name}
                       <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-brand -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
