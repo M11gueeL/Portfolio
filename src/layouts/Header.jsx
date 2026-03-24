@@ -6,6 +6,7 @@ import {
   LuUser, 
   LuCode, 
   LuBriefcase, 
+  LuFolderGit2,
   LuMail,
   LuMenu,
   LuX
@@ -30,7 +31,7 @@ export const Header = () => {
     { name: 'Sobre Mí', href: '/about', icon: LuUser },
     { name: 'Habilidades', href: '/skills', icon: LuCode },
     { name: 'Experiencia', href: '/experience', icon: LuBriefcase },
-    { name: 'Proyectos', href: '/projects', icon: LuBriefcase },
+    { name: 'Proyectos', href: '/projects', icon: LuFolderGit2 },
     { name: 'Contacto', href: '/contact', icon: LuMail },
   ];
 
@@ -59,16 +60,16 @@ export const Header = () => {
             </Link>
 
             {/* 2. Medio: Navegación Limpia y Minimalista (Tablet+Desktop) */}
-            <div className="hidden lg:flex gap-x-8 items-center absolute left-1/2 -translate-x-1/2">
+            <div className="hidden lg:flex gap-x-5 xl:gap-x-8 items-center absolute left-1/2 -translate-x-1/2 shrink-0">
               {navLinks.map((link) => {
                 const Icon = link.icon;
                 return (
                   <Link
                     key={link.name}
                     to={link.href}
-                    className="group relative flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-300 font-medium text-sm"
+                    className="group relative flex items-center gap-1.5 xl:gap-2 text-zinc-600 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-300 font-medium text-[13px] xl:text-sm whitespace-nowrap"
                   >
-                    <Icon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                    <Icon className="w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
                     <span>{link.name}</span>
                     
                     {/* Subrayado animado */}
