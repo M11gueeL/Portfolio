@@ -20,7 +20,7 @@ export const Footer = () => {
           
           {/* Columna 1: Branding y Perfil */}
           <div className="md:col-span-5 lg:col-span-6 flex flex-col items-start xl:pr-10">
-            <a href="#inicio" className="flex items-center gap-4 group mb-7">
+            <a href="/" className="flex items-center gap-4 group mb-7">
               <div className="relative">
                 {/* Glow del Logo al hacer hover */}
                 <div className="absolute inset-0 bg-brand/40 blur-md rounded-full scale-50 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -66,7 +66,7 @@ export const Footer = () => {
               {['Inicio', 'Sobre Mí', 'Habilidades', 'Proyectos'].map((link) => (
                 <li key={link}>
                   <a 
-                    href={`#${link.toLowerCase().replace(' ', '-')}`} 
+                    href={`${link.toLowerCase().replace(' ', '-')}`} 
                     className="group flex items-center gap-2 text-[15px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-medium"
                   >
                     <span className="relative overflow-hidden pb-1">
@@ -87,9 +87,9 @@ export const Footer = () => {
             
             <div className="flex items-center gap-4 mb-8 md:justify-end mt-2">
               {[
-                { icon: FaGithub, href: "https://github.com/tu-usuario", label: "GitHub" },
-                { icon: FaLinkedin, href: "https://linkedin.com/in/tu-usuario", label: "LinkedIn" },
-                { icon: FaRegEnvelope, href: "mailto:tu-correo@ejemplo.com", label: "Correo" }
+                { icon: FaGithub, href: "https://github.com/M11gueeL", label: "GitHub" },
+                { icon: FaLinkedin, href: "https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b/", label: "LinkedIn" },
+                { icon: FaRegEnvelope, href: "mailto:monasteriomiguelangel81@gmail.com", label: "Correo" }
               ].map((social) => {
                 const Icon = social.icon;
                 return (
@@ -110,7 +110,7 @@ export const Footer = () => {
             </div>
             
             <a 
-              href="mailto:tu-correo@ejemplo.com" 
+              href="mailto:monasteriomiguelangel81@gmail.com" 
               className="group inline-flex items-stretch gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-medium border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 px-4 py-2 rounded-xl bg-transparent hover:bg-white/40 dark:hover:bg-zinc-900/40 backdrop-blur-sm md:mr-4"
             >
               ¿Charlamos por correo? 

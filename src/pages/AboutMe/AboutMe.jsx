@@ -41,14 +41,14 @@ export const AboutMe = () => {
             
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-6">
-              <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/M11gueeL" target="_blank" rel="noopener noreferrer" 
                 className="group relative inline-flex items-center gap-3 px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-zinc-900/20 dark:shadow-white/20 active:scale-95">
                 <FaGithub className="w-5 h-5 relative z-10" />
                 <span className="relative z-10">Visitar mi GitHub</span>
                 <span className="absolute inset-0 bg-zinc-800 dark:bg-zinc-200 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
               </a>
               
-              <a href="#proyectos" 
+              <a href="/projects" 
                 className="group inline-flex items-center gap-2 px-6 py-3 bg-white/70 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md text-zinc-900 dark:text-white font-semibold rounded-xl transition-all duration-300 hover:border-brand/50 hover:bg-brand/5 dark:hover:bg-brand/10 hover:-translate-y-1">
                 Ver mis proyectos
                 <LuArrowRight className="w-4 h-4 text-brand transform group-hover:translate-x-1 transition-transform" />

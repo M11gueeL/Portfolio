@@ -17,8 +17,8 @@ export const Projects = () => {
               Portafolio Completo
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-            Mis <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-500">Proyectos</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Mis <span className="text-transparent bg-clip-text bg-linear-to-r from-brand to-emerald-500">Proyectos</span>
           </h1>
           
         </div>

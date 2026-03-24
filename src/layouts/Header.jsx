@@ -174,15 +174,15 @@ export const Header = () => {
                   isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
               >
-                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub" 
+                <a href="https://github.com/M11gueeL" target="_blank" rel="noopener noreferrer" aria-label="GitHub" 
                   className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-brand dark:hover:bg-brand transition-all duration-300 transform hover:-translate-y-1.5 shadow-sm hover:shadow-brand/30">
                   <FaGithub className="text-xl" />
                 </a>
-                <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" 
+                <a href="https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" 
                   className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-brand dark:hover:bg-brand transition-all duration-300 transform hover:-translate-y-1.5 shadow-sm hover:shadow-brand/30">
                   <FaLinkedin className="text-xl" />
                 </a>
-                <a href="mailto:tu-correo@ejemplo.com" aria-label="Correo" 
+                <a href="mailto:monasteriomiguelangel81@gmail.com" aria-label="Correo" 
                   className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-brand dark:hover:bg-brand transition-all duration-300 transform hover:-translate-y-1.5 shadow-sm hover:shadow-brand/30">
                   <FaRegEnvelope className="text-xl" />
                 </a>

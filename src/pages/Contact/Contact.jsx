@@ -50,14 +50,14 @@ export const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Email Card */}
-              <a href="mailto:hola@miguelangel.dev" className="group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5">
+              <a href="mailto:monasteriomiguelangel81@gmail.com" className="group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5">
                 <div className="w-12 h-12 flex items-center justify-center bg-brand/10 dark:bg-brand/20 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <LuMail className="w-6 h-6 text-brand" />
                 </div>
                 <div>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium mb-1">Escríbeme un correo</p>
                   <p className="text-base font-bold text-zinc-900 dark:text-white line-clamp-1">
-                    hola@miguel.dev
+                    monasteriomiguelangel81@gmail.com
                   </p>
                 </div>
               </a>
