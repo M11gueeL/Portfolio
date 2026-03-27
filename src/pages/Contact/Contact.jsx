@@ -1,10 +1,47 @@
-import { LuMail, LuSend, LuUser, LuMessageSquare, LuMapPin, LuTerminal } from 'react-icons/lu';
+import { useRef, useState } from 'react';
+import { LuMail, LuSend, LuUser, LuMessageSquare, LuMapPin, LuTerminal, LuCircleCheck, LuCircleAlert, LuLoaderCircle } from 'react-icons/lu';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implementar lógica de envío más adelante
-    console.log("Formulario enviado (demo)");
+    
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setSubmitStatus('success');
+          setIsSubmitting(false);
+          form.current.reset();
+          
+          setTimeout(() => {
+            setSubmitStatus(null);
+          }, 6000);
+        },
+        (error) => {
+          console.error("FAILED...", error.text);
+          setSubmitStatus('error');
+          setIsSubmitting(false);
+
+          setTimeout(() => {
+            setSubmitStatus(null);
+          }, 6000);
+        }
+      );
   };
 
   return (
@@ -94,7 +131,7 @@ export const Contact = () => {
           </div>
 
           {/* Right Column: Form Container */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 sm:p-10 bg-zinc-50/80 dark:bg-zinc-900/40 backdrop-blur-xl rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] relative overflow-hidden group/form">
+          <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 sm:p-10 bg-zinc-50/80 dark:bg-zinc-900/40 backdrop-blur-xl rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] relative overflow-hidden group/form">
             {/* Ambient inner Form Glow */}
             <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-brand/5 dark:bg-brand/10 blur-[80px] rounded-full group-hover/form:bg-brand/15 transition-colors duration-500 pointer-events-none" />
             
@@ -107,9 +144,12 @@ export const Contact = () => {
               <LuUser className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
               <input 
                 type="text" 
+                name="user_name"
                 placeholder="Tu nombre completo" 
                 required 
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer" 
+                maxLength={60}
+                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
+                disabled={isSubmitting}
               />
             </div>
 
@@ -118,9 +158,12 @@ export const Contact = () => {
               <LuMail className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
               <input 
                 type="email" 
+                name="user_email"
                 placeholder="Tu correo electrónico" 
                 required 
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer" 
+                maxLength={100}
+                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
+                disabled={isSubmitting}
               />
             </div>
 
@@ -128,22 +171,51 @@ export const Contact = () => {
             <div className="relative z-10 group">
               <LuMessageSquare className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
               <textarea 
+                name="message"
                 placeholder="Desarrolla tu idea o déjame tu mensaje..." 
                 required 
                 rows={5} 
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm resize-none peer" 
+                maxLength={1000}
+                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm resize-none peer disabled:opacity-60" 
+                disabled={isSubmitting}
               />
             </div>
+
+            {/* Notifications */}
+            {submitStatus === 'success' && (
+              <div className="relative z-10 flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-2xl text-sm font-medium animate-fade-in-up">
+                <LuCircleCheck className="w-5 h-5 flex-shrink-0" />
+                <p>¡Mensaje enviado con éxito! Te responderé pronto.</p>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="relative z-10 flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 rounded-2xl text-sm font-medium animate-fade-in-up">
+                <LuCircleAlert className="w-5 h-5 flex-shrink-0" />
+                <p>Ocurrió un error. Por favor, inténtalo de nuevo.</p>
+              </div>
+            )}
 
             {/* Submit Action */}
             <button 
               type="submit" 
-              className="group relative inline-flex items-center justify-center gap-2 w-full mt-2 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl overflow-hidden transition-transform active:scale-95 shadow-md hover:shadow-brand/20 z-10"
+              disabled={isSubmitting}
+              className="group relative inline-flex items-center justify-center gap-2 w-full mt-2 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl overflow-hidden transition-all active:scale-95 shadow-md hover:shadow-brand/20 z-10 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100"
             >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-              <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
-                Enviar Mensaje
-                <LuSend className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 ease-out" />
+              {!isSubmitting && <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />}
+              
+              <span className={`relative z-10 flex items-center gap-2 transition-colors duration-300 ${!isSubmitting && 'group-hover:text-white'}`}>
+                {isSubmitting ? (
+                  <>
+                    Enviando
+                    <LuLoaderCircle className="w-5 h-5 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Enviar Mensaje
+                    <LuSend className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 ease-out" />
+                  </>
+                )}
               </span>
             </button>
             <p className="text-center text-xs text-zinc-500 dark:text-zinc-500 mt-2 relative z-10 font-medium">
