@@ -47,23 +47,23 @@ export const Contact = () => {
             </div>
             
             {/* Info Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
               
               {/* Email Card */}
-              <a href="mailto:monasteriomiguelangel81@gmail.com" className="group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5">
+              <a href="mailto:monasteriomiguelangel81@gmail.com" className="sm:col-span-3 group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5">
                 <div className="w-12 h-12 flex items-center justify-center bg-brand/10 dark:bg-brand/20 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <LuMail className="w-6 h-6 text-brand" />
                 </div>
                 <div>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium mb-1">Escríbeme un correo</p>
-                  <p className="text-base font-bold text-zinc-900 dark:text-white line-clamp-1">
+                  <p className="text-base font-bold text-zinc-900 dark:text-white truncate" title="monasteriomiguelangel81@gmail.com">
                     monasteriomiguelangel81@gmail.com
                   </p>
                 </div>
               </a>
 
               {/* Location Card */}
-              <div className="group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-sky-500/30 dark:hover:border-sky-500/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/5 cursor-default">
+              <div className="sm:col-span-2 group flex flex-col gap-4 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-sky-500/30 dark:hover:border-sky-500/30 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/5 cursor-default">
                 <div className="w-12 h-12 flex items-center justify-center bg-sky-500/10 dark:bg-sky-500/20 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <LuMapPin className="w-6 h-6 text-sky-600 dark:text-sky-400" />
                 </div>
@@ -77,7 +77,7 @@ export const Contact = () => {
               </div>
 
               {/* Work Preference Card */}
-              <div className="sm:col-span-2 group flex items-center gap-5 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 shadow-sm cursor-default overflow-hidden relative">
+              <div className="sm:col-span-5 group flex items-center gap-5 p-6 bg-zinc-50 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 shadow-sm cursor-default overflow-hidden relative">
                 <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 blur-[40px] rounded-full group-hover:bg-emerald-500/10 transition-colors pointer-events-none" />
                 <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-emerald-500/10 dark:bg-emerald-500/20 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <LuTerminal className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
