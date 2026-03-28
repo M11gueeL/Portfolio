@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const ProjectsHook = () => {
   return (
-    <section className="relative w-full py-20 px-6 overflow-hidden bg-brand/5 dark:bg-brand/5 border-y border-zinc-200/50 dark:border-zinc-800/50">
+    <section className="relative w-full py-20 px-6 overflow-hidden bg-white dark:bg-zinc-950 border-y border-zinc-200/50 dark:border-zinc-800/50 transition-colors duration-500">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand/10 via-transparent to-transparent opacity-50 dark:opacity-30 pointer-events-none" />
       
       <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">

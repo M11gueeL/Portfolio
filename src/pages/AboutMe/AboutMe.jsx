@@ -1,10 +1,11 @@
 import { FaGithub, FaReact, FaLaravel } from 'react-icons/fa';
 import { SiMysql, SiTailwindcss } from 'react-icons/si';
 import { LuGraduationCap, LuMapPin, LuBookOpen, LuArrowRight, LuUser } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 
 export const AboutMe = () => {
   return (
-    <section id="about" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 transition-colors duration-500">
+    <section id="about" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500"> 
       {/* Decorative Background Blur */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 dark:bg-brand/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 dark:bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -48,11 +49,11 @@ export const AboutMe = () => {
                 <span className="absolute inset-0 bg-zinc-800 dark:bg-zinc-200 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
               </a>
               
-              <a href="/projects" 
+              <Link to="/projects" 
                 className="group inline-flex items-center gap-2 px-6 py-3 bg-white/70 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md text-zinc-900 dark:text-white font-semibold rounded-xl transition-all duration-300 hover:border-brand/50 hover:bg-brand/5 dark:hover:bg-brand/10 hover:-translate-y-1">
                 Ver mis proyectos
                 <LuArrowRight className="w-4 h-4 text-brand transform group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
 

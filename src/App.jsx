@@ -25,14 +25,11 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* Todas estas rutas cargan el Home, pero su path ayudará a scrollear */}
           <Route index element={<Home />} />
           <Route path="about" element={<Home />} />
           <Route path="skills" element={<Home />} />
           <Route path="experience" element={<Home />} />
           <Route path="contact" element={<Home />} />
-          
-          {/* Esta es la ruta totalmente independiente */}
           <Route path="projects" element={<Projects />} />
         </Route>
       </Routes>

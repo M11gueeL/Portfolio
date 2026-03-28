@@ -11,7 +11,6 @@ export const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Si la ruta es /about, path será 'about'. Si es /, path será vacío.
     const path = location.pathname.replace('/', '');
     
     if (path) {

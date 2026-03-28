@@ -3,7 +3,7 @@ import { experienceData } from '../../data/experience';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 transition-colors duration-500">
+    <section id="experience" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 dark:bg-brand/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/2 left-1/4 w-[400px] h-[400px] bg-sky-500/5 dark:bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -ml-[200px]" />
