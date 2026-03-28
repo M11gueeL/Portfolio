@@ -8,7 +8,7 @@
 
   <p>
     <a href="https://github.com/M11gueeL"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" /></a>
-    <a href="https://linkedin.com/in/tu-perfil"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white" /></a>
+    <a href="https://www.linkedin.com/in/miguelangel-monasterio-a7b33530b/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white" /></a>
   </p>
 </div>
 
