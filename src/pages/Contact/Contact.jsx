@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { LuMail, LuSend, LuUser, LuMessageSquare, LuMapPin, LuTerminal, LuLoaderCircle, LuCircleCheck, LuCircleAlert } from 'react-icons/lu';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import { FadeUp } from '../../components/FadeUp';
 
 export const Contact = () => {
   const form = useRef();
@@ -61,7 +62,7 @@ export const Contact = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center mb-16 text-center">
+        <FadeUp className="flex flex-col items-center mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md shadow-sm mb-4">
             <LuMail className="w-4 h-4 text-brand" />
             <span className="text-sm font-bold tracking-widest uppercase text-zinc-700 dark:text-zinc-300">
@@ -74,15 +75,13 @@ export const Contact = () => {
           <p className="mt-4 text-center text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg font-light">
             ¿Tienes un proyecto en mente o una oportunidad de trabajo? Estoy disponible para charlar y aportar valor a tu equipo.
           </p>
-        </div>
+        </FadeUp>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Info & Bento Cards */}
-          <div className="flex flex-col gap-6">
-            
-            {/* Info Text */}
+          <FadeUp delay={0.1} className="flex flex-col gap-6">
             <div className="prose dark:prose-invert">
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
                 Conectemos y hagámoslo <span className="text-brand">realidad</span>.
@@ -137,19 +136,20 @@ export const Contact = () => {
               </div>
 
             </div>
-          </div>
+          </FadeUp>
 
           {/* Right Column: Form Container */}
-          <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 sm:p-10 bg-zinc-50/80 dark:bg-zinc-900/40 backdrop-blur-xl rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] relative overflow-hidden group/form">
-            {/* Ambient inner Form Glow */}
-            <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-brand/5 dark:bg-brand/10 blur-[80px] rounded-full group-hover/form:bg-brand/15 transition-colors duration-500 pointer-events-none" />
-            
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2 relative z-10">
-              Envíame un mensaje
-            </h3>
+          <FadeUp delay={0.2} direction="up" className="relative group lg:w-3/5 w-full">
+            <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 sm:p-10 bg-zinc-50/80 dark:bg-zinc-900/40 backdrop-blur-xl rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] relative overflow-hidden group/form w-full">
+              {/* Ambient inner Form Glow */}
+              <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-brand/5 dark:bg-brand/10 blur-[80px] rounded-full group-hover/form:bg-brand/15 transition-colors duration-500 pointer-events-none" />
 
-            {/* Input: Nombre */}
-            <div className="relative z-10 group flex flex-col">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2 relative z-10">
+                Envíame un mensaje
+              </h3>
+
+              {/* Input: Nombre */}
+              <div className="relative z-10 group flex flex-col">
               <LuUser className="absolute left-4 top-[17px] w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors pointer-events-none z-10" />
               <input 
                 type="text" 
@@ -216,6 +216,7 @@ export const Contact = () => {
               Tus datos están seguros y no se compartirán con terceros.
             </p>
           </form>
+          </FadeUp>
 
         </div>
       </div>

@@ -2,6 +2,7 @@ import { FaGithub, FaReact, FaLaravel } from 'react-icons/fa';
 import { SiMysql, SiTailwindcss } from 'react-icons/si';
 import { LuGraduationCap, LuMapPin, LuBookOpen, LuArrowRight, LuUser } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
+import { FadeUp } from '../../components/FadeUp';
 
 export const AboutMe = () => {
   return (
@@ -13,7 +14,7 @@ export const AboutMe = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center md:items-start mb-16">
+        <FadeUp className="flex flex-col items-center md:items-start mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md shadow-sm mb-4">
             <LuUser className="w-4 h-4 text-brand" />
             <span className="text-sm font-bold tracking-widest uppercase text-zinc-700 dark:text-zinc-300">
@@ -23,13 +24,13 @@ export const AboutMe = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight text-center md:text-left">
             Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-500">Mí</span>
           </h2>
-        </div>
+        </FadeUp>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
           {/* Left Column: Story */}
-          <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+          <FadeUp delay={0.1} className="lg:col-span-7 flex flex-col justify-center space-y-6 text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
             <p>
               ¡Hola! Soy <strong className="font-semibold text-zinc-900 dark:text-zinc-200">Miguelangel Monasterio</strong>, un apasionado desarrollador web de Venezuela. Mi aventura en la tecnología se fundamenta en la curiosidad y la capacidad de transformar lógica compleja en experiencias visuales intuitivas.
             </p>
@@ -55,10 +56,10 @@ export const AboutMe = () => {
                 <LuArrowRight className="w-4 h-4 text-brand transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
+          </FadeUp>
 
           {/* Right Column: Bento Box Info */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <FadeUp delay={0.2} className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
             
             {/* Card 1: Educación */}
             <div className="sm:col-span-2 p-6 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800/80 group hover:border-brand/30 dark:hover:border-brand/30 transition-colors shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.05)]">
@@ -120,7 +121,7 @@ export const AboutMe = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </div>
     </section>

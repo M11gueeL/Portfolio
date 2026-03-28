@@ -1,16 +1,17 @@
 import { LuBriefcase, LuExternalLink } from 'react-icons/lu';
 import { experienceData } from '../../data/experience';
+import { FadeUp } from '../../components/FadeUp';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
+    <section id="experience" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500"> 
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 dark:bg-brand/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/2 left-1/4 w-[400px] h-[400px] bg-sky-500/5 dark:bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -ml-[200px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center mb-20 text-center">
+        <FadeUp className="flex flex-col items-center mb-20 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md shadow-sm mb-4">
             <LuBriefcase className="w-4 h-4 text-brand" />
             <span className="text-sm font-bold tracking-widest uppercase text-zinc-700 dark:text-zinc-300">
@@ -20,17 +21,15 @@ export const Experience = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
             Experiencia <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-500">Laboral</span>
           </h2>
-        </div>
+        </FadeUp>
 
         {/* Timeline Container */}
         <div className="relative border-l-2 border-zinc-200 dark:border-zinc-800 ml-4 md:ml-6 space-y-12">
-          
+
           {experienceData.map((job, index) => (
-            <div key={job.id} className="relative pl-8 md:pl-10 group">
+            <FadeUp key={job.id} delay={index * 0.15} className="relative pl-8 md:pl-10 group">
               {/* Timeline Marker (Dot) */}
-              <div className="absolute left-[-9px] top-1.5 w-4 h-4 rounded-full bg-zinc-200 dark:bg-zinc-800 border-2 border-white dark:border-zinc-950 group-hover:border-brand group-hover:bg-brand transition-colors duration-300 shadow-sm" />
-              
-              {/* Card Container */}
+              <div className="absolute left-[calc(-0.5rem-1px)] md:left-[-9px] top-1.5 w-4 h-4 rounded-full bg-zinc-200 dark:bg-zinc-800 border-2 border-white dark:border-zinc-950 group-hover:border-brand group-hover:bg-brand transition-colors duration-300 shadow-sm" />
               <div className="flex flex-col bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800/80 p-6 md:p-8 rounded-3xl hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.05)] hover:-translate-y-1">
                 
                 {/* Header Info */}
@@ -85,7 +84,7 @@ export const Experience = () => {
                 </div>
 
               </div>
-            </div>
+            </FadeUp>
           ))}
 
         </div>

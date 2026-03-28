@@ -1,12 +1,13 @@
 import { LuRocket, LuArrowRight } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
+import { FadeUp } from './FadeUp';
 
 export const ProjectsHook = () => {
   return (
     <section className="relative w-full py-20 px-6 overflow-hidden bg-white dark:bg-zinc-950 border-y border-zinc-200/50 dark:border-zinc-800/50 transition-colors duration-500">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand/10 via-transparent to-transparent opacity-50 dark:opacity-30 pointer-events-none" />
-      
-      <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
+
+      <FadeUp className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
         <div className="w-16 h-16 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl flex items-center justify-center animate-bounce duration-1000">
           <LuRocket className="w-8 h-8 text-brand" />
         </div>
@@ -29,7 +30,7 @@ export const ProjectsHook = () => {
             <LuArrowRight className="w-5 h-5 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out" />
           </span>
         </Link>
-      </div>
+      </FadeUp>
     </section>
   );
 };
