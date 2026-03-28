@@ -139,7 +139,7 @@ export const Contact = () => {
           </FadeUp>
 
           {/* Right Column: Form Container */}
-          <FadeUp delay={0.2} direction="up" className="relative group lg:w-3/5 w-full">
+          <FadeUp delay={0.2} direction="up" className="relative group w-full">
             <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 sm:p-10 bg-zinc-50/80 dark:bg-zinc-900/40 backdrop-blur-xl rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] relative overflow-hidden group/form w-full">
               {/* Ambient inner Form Glow */}
               <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-brand/5 dark:bg-brand/10 blur-[80px] rounded-full group-hover/form:bg-brand/15 transition-colors duration-500 pointer-events-none" />
