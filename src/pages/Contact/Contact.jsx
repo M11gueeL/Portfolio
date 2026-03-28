@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
-import { LuMail, LuSend, LuUser, LuMessageSquare, LuMapPin, LuTerminal, LuCircleCheck, LuCircleAlert, LuLoaderCircle } from 'react-icons/lu';
+import { LuMail, LuSend, LuUser, LuMessageSquare, LuMapPin, LuTerminal, LuLoaderCircle, LuCircleCheck, LuCircleAlert } from 'react-icons/lu';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 export const Contact = () => {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +13,8 @@ export const Contact = () => {
     if (isSubmitting) return;
 
     setIsSubmitting(true);
-    setSubmitStatus(null);
+
+    const toastId = toast.loading('Enviando mensaje...');
 
     emailjs
       .sendForm(
@@ -24,22 +25,30 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setSubmitStatus('success');
           setIsSubmitting(false);
           form.current.reset();
-          
-          setTimeout(() => {
-            setSubmitStatus(null);
-          }, 6000);
+          toast.update(toastId, { 
+            render: '¡Mensaje enviado con éxito!', 
+            type: 'success', 
+            isLoading: false,
+            autoClose: 3500,
+            closeButton: true,
+            icon: <LuCircleCheck className="w-6 h-6 text-brand" />,
+            className: 'font-medium',
+          });
         },
         (error) => {
           console.error("FAILED...", error.text);
-          setSubmitStatus('error');
           setIsSubmitting(false);
-
-          setTimeout(() => {
-            setSubmitStatus(null);
-          }, 6000);
+          toast.update(toastId, { 
+            render: 'Ocurrió un error al enviar. Inténtalo de nuevo.', 
+            type: 'error', 
+            isLoading: false,
+            autoClose: 4000,
+            closeButton: true,
+            icon: <LuCircleAlert className="w-6 h-6 text-red-500" />,
+            className: 'font-medium',
+          });
         }
       );
   };
@@ -140,61 +149,46 @@ export const Contact = () => {
             </h3>
 
             {/* Input: Nombre */}
-            <div className="relative z-10 group">
-              <LuUser className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
+            <div className="relative z-10 group flex flex-col">
+              <LuUser className="absolute left-4 top-[17px] w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors pointer-events-none z-10" />
               <input 
                 type="text" 
                 name="user_name"
                 placeholder="Tu nombre completo" 
                 required 
                 maxLength={60}
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
+                className="w-full bg-white/50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
                 disabled={isSubmitting}
               />
             </div>
 
             {/* Input: Correo */}
-            <div className="relative z-10 group">
-              <LuMail className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
+            <div className="relative z-10 group flex flex-col">
+              <LuMail className="absolute left-4 top-[17px] w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors pointer-events-none z-10" />
               <input 
                 type="email" 
                 name="user_email"
                 placeholder="Tu correo electrónico" 
                 required 
                 maxLength={100}
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
+                className="w-full bg-white/50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm peer disabled:opacity-60" 
                 disabled={isSubmitting}
               />
             </div>
 
             {/* View: Textarea */}
-            <div className="relative z-10 group">
-              <LuMessageSquare className="absolute left-4 top-4 w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors" />
+            <div className="relative z-10 group flex flex-col">
+              <LuMessageSquare className="absolute left-4 top-[17px] w-5 h-5 text-zinc-400 group-focus-within:text-brand transition-colors pointer-events-none z-10" />
               <textarea 
                 name="message"
                 placeholder="Desarrolla tu idea o déjame tu mensaje..." 
                 required 
                 rows={5} 
                 maxLength={1000}
-                className="w-full bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm resize-none peer disabled:opacity-60" 
+                className="w-full bg-white/50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl pl-12 pr-4 py-3.5 text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all backdrop-blur-sm resize-none peer disabled:opacity-60" 
                 disabled={isSubmitting}
               />
             </div>
-
-            {/* Notifications */}
-            {submitStatus === 'success' && (
-              <div className="relative z-10 flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-2xl text-sm font-medium animate-fade-in-up">
-                <LuCircleCheck className="w-5 h-5 flex-shrink-0" />
-                <p>¡Mensaje enviado con éxito! Te responderé pronto.</p>
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="relative z-10 flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 rounded-2xl text-sm font-medium animate-fade-in-up">
-                <LuCircleAlert className="w-5 h-5 flex-shrink-0" />
-                <p>Ocurrió un error. Por favor, inténtalo de nuevo.</p>
-              </div>
-            )}
 
             {/* Submit Action */}
             <button 
